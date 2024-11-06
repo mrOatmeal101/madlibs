@@ -26,6 +26,15 @@ def lucky_number():
     return render_template('lucky.html', lucky_num=num, msg="you are so lucky")
 # got this output first: Your lucky number is: 20
 
+@app.route('/form')
+def show_form():
+    return render_template('form.html')
+
+@app.route('/greet')
+def get_greeting():
+    username = request.args['username']
+    return render_template('greet.html', username=username)
+
 # POSTS = {
 #     1: "I like kitties",
 #     2: "i like dogs",
