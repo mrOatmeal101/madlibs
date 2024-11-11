@@ -1,6 +1,6 @@
 from flask import Flask, request, render_template
 from flask_debugtoolbar import DebugToolbarExtension
-from random import randint
+from random import randint, choice
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = "frejyathecat"
@@ -30,10 +30,13 @@ def lucky_number():
 def show_form():
     return render_template('form.html')
 
+compliments = ['cool', 'clever', 'tenacious', 'awesome', 'pythonic']
+
 @app.route('/greet')
 def get_greeting():
     username = request.args['username']
-    return render_template('greet.html', username=username)
+    nice_thing = choice(compliments)
+    return render_template('greet.html', username=username, compliment=nice_thing)
 
 # POSTS = {
 #     1: "I like kitties",
