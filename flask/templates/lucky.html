@@ -7,7 +7,14 @@
 </head>
 <body>
     <h1>Your lucky number is: {{lucky_num}}</h1>
+
     <p>{{msg}}</p>
+
+    {% if lucky_num == 3 %}
+    <h2>That's my lucky number</h2>
+    {% else %}
+    <h2>{{lucky_num}} is not my lucky number</h2>
+    {% endif %}
     
 </body>
 </html>

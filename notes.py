@@ -141,8 +141,19 @@
 # @app.route('/greet')
 # def offer_greeting():
 #     """Give player compliment."""
-
 #     player = request.args["person"]
 #     nice_thing = choice(COMPLIMENTS)
-
 #     return render_template("compliment.html", name=player, compliment=nice_thing)
+
+# Section 6 Jinja Conditionals
+# Do you know how you get one version of a webpage before you log in, and a different version after? 
+# That is because the back-end will serve you a different template depending on conditional logic and permissions. 
+# This video will give you a gentle introduction to conditional logic in templates.
+
+# Conditionals in Jinja
+# {% if CONDITION_EXPR %} ... {% endif %}
+
+# {% if compliments %}
+#   You're so:
+#   ...
+# {% endif %}

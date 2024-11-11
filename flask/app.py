@@ -26,6 +26,12 @@ def lucky_number():
     return render_template('lucky.html', lucky_num=num, msg="you are so lucky")
 # got this output first: Your lucky number is: 20
 
+@app.route('/luckytwo')
+def lucky_numbertwo():
+    num = randint(1,10)
+    return render_template('lucky.html', lucky_num=num, msg="you are so lucky")
+# got this output first: Your lucky number is: 20
+
 @app.route('/form')
 def show_form():
     return render_template('form.html')
