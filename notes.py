@@ -157,3 +157,17 @@
 #   You're so:
 #   ...
 # {% endif %}
+
+# Section 7 Jinja Loops
+# Let's say you want to have a drop-down list containing all of the countries in the world. 
+# This tutorial will show you how to pass items like a list, generated from reading a database, into your templates. 
+# Then we'll show you how to iterate over those objects.
+
+# Loops in Jinja
+# {% for VAR in ITERABLE %} ... {% endfor %}
+
+# <ul>
+#   {% for compliment in compliments %}
+#     <li>{{ compliment }}</li>
+#   {% endfor %}
+# </ul>

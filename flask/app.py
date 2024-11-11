@@ -32,6 +32,11 @@ def lucky_numbertwo():
     return render_template('lucky.html', lucky_num=num, msg="you are so lucky")
 # got this output first: Your lucky number is: 20
 
+@app.route('/spell/<word>')
+def spell_word(word):
+    caps_word = word.upper()
+    return render_template('spell_word.html', word=caps_word)
+
 @app.route('/form')
 def show_form():
     return render_template('form.html')
