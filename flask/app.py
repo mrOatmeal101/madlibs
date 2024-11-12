@@ -1,6 +1,6 @@
 from flask import Flask, request, render_template
 from flask_debugtoolbar import DebugToolbarExtension
-from random import randint, choice
+from random import randint, choice, sample
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = "frejyathecat"
@@ -41,23 +41,21 @@ def spell_word(word):
 def show_form():
     return render_template('form.html')
 
-compliments = ['cool', 'clever', 'tenacious', 'awesome', 'pythonic']
+COMPLIMENTS = ['cool', 'clever', 'tenacious', 'awesome', 'pythonic']
 
 @app.route('/greet')
 def get_greeting():
     username = request.args['username']
-    nice_thing = choice(compliments)
+    nice_thing = choice(COMPLIMENTS)
     return render_template('greet.html', username=username, compliment=nice_thing)
 
-# POSTS = {
-#     1: "I like kitties",
-#     2: "i like dogs",
-#     3: "double rainbow all the way",
-#     4: "orange amps"
-# }
+@app.route('/form-2')
+def show_form_2():
+    return render_template('form_2.html')
 
-# @app.route('/posts/<int:id>') 
-# def find_posts(id):
-#     post = POSTS.get(id, "Post Not Found")
-#     return f"<p>{post}</p>"
-
+@app.route('/greet-2')
+def get_greeting_2():
+    username = request.args['username']
+    wants = request.args.get('wants_compliments')
+    nice_things = sample(COMPLIMENTS, 3)
+    return render_template('greet_2.html', username=username, wants_compliments=wants, compliments=nice_things)
