@@ -243,3 +243,7 @@
     # Make a base.html that will hold all the repetitive stuff
     # “Extend” that base template in your other pages
     # Substitute blocks in your extended pages
+
+# Section 10 Static Assets
+# So far, you've seen how Jinja can be used to generate HTML. Jinja can also render CSS and JavaScript. 
+# We'll show you how this is done, and how to include style sheets on your templates. 
