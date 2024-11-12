@@ -247,3 +247,6 @@
 # Section 10 Static Assets
 # So far, you've seen how Jinja can be used to generate HTML. Jinja can also render CSS and JavaScript. 
 # We'll show you how this is done, and how to include style sheets on your templates. 
+
+# Section 11 Greeter 3 Demo - Adding a Navbar
+# In this demo, we'll improve our greeter app with CSS, inheritance, and a navbar that persists across pages - code along if you'd like. 
