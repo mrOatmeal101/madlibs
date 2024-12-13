@@ -16,7 +16,8 @@
     <!-- Made a form for this page with the action set to madlibstory which will be the output page -->
     <form action="/story">
 
-        <p>
+        <!-- first attempt -->
+        <!-- <p>
         <ul>
         <li>Place:<input type="text" placeholder="name of a place" name="place"></li>
         <li>Noun:<input type="text" placeholder="a noun" name='noun'></li>
@@ -25,11 +26,20 @@
         <li>Pural_Noun:<input type="text" placeholder="a pural noun" name='pural_noun'></li>
         </ul>
         <button>Submit</button>
+        </p> -->
 
-        </p>
-
+        <!-- second attempt -->
+        {% for prompt in prompts  %}
+        <ul>
+            <li>{{ prompt }}: <input type="text" placeholder="{{prompt}}" name="{{prompt}}"></li>
+        </ul>
+        {% endfor %}
+        <button>Submit</button>
+        
     </form>
     {% endblock %}
+
+
 
 
 <!-- </body>

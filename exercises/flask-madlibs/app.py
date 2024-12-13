@@ -6,7 +6,7 @@
 # first line of code is to import Flask from the module flask 
 from flask import Flask, render_template, request
 from flask_debugtoolbar import DebugToolbarExtension
-from stories import story
+from stories import story, s, ans
 
 
 
@@ -31,33 +31,41 @@ def home_page():
     # used the function render template and give it the name of html file to render. 
     return render_template('hello.html')
 
-# adding route to the madlib form page for user input
-@app.route('/madlibform')
-def madlib_form_page():
-    return render_template('madlibform.html')
+# # adding route to the madlib form page for user input
+# @app.route('/madlibform')
+# def madlib_form_page():
+#     return render_template('madlibform.html')
 
 # # making an output page for when the form from madlibform sends a request to here.
-@app.route('/story')
-def madlib_story():
-    place = request.args['place']
-    noun = request.args['noun']
-    verb = request.args['verb']
-    adjective = request.args['adjective']
-    pural_noun = request.args['pural_noun']
-    return render_template('story.html', place=place, noun=noun, verb=verb, adjective=adjective, pural_noun=pural_noun)
+# @app.route('/story')
+# def madlib_story():
+#     place = request.args['place']
+#     noun = request.args['noun']
+#     verb = request.args['verb']
+#     adjective = request.args['adjective']
+#     pural_noun = request.args['pural_noun']
+#     return render_template('story.html', place=place, noun=noun, verb=verb, adjective=adjective, pural_noun=pural_noun)
 
-# @app.route("/")
-# def ask_questions():
-#     """Generate and show form to ask words."""
+@app.route("/madlibform")
+def ask_questions():
+    """Generate and show form to ask words."""
 
-#     prompts = story.prompts
+    prompts = story.prompts
 
-#     return render_template("hello.html"), prompts=prompts)
+    return render_template(("madlibform.html"), prompts=prompts)
 
-# @app.route("/story")
-# def show_story():
-#     """Show story result."""
+@app.route("/story")
+def mablib_story():
+    """Show story result."""
 
-#     text = story.generate(request.args)
+    # testing the to make sure that output is appearing on /story
+    # story_one = 'test'
 
-#     return render_template("story.html"), text=text)
+    # hardcode test of the class Story 
+    story_two = s.generate(ans)
+
+    # using the input from form to generate story
+    story_three = story.generate(request.args)
+  
+
+    return render_template(("story.html"), story_two=story_two, story_three=story_three)
