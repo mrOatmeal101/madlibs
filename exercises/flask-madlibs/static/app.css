@@ -17,6 +17,7 @@ p {
 
 footer {
     color: hotpink;
+    padding: 10px;
 }
 
 body {
@@ -55,3 +56,4 @@ li input {
     background-color: white;
     color: hotpink;
 }
+

@@ -14,7 +14,7 @@ from stories import story, s, ans
 # this is a class and it makes us an app object.
 # we store it in a variable called app.
 app = Flask(__name__)
-app.config['SECRET_KEY'] = "frejyathecat"
+app.config['SECRET_KEY'] = "thedog"
 debug = DebugToolbarExtension(app)
 # then in the command line: flask run
 # The server is now running and use ctrl + c to quit.
