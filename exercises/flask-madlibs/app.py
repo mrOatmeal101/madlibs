@@ -31,14 +31,19 @@ def home_page():
     # used the function render template and give it the name of html file to render. 
     return render_template('hello.html')
 
+# first attempt at making the madlib form work using hardcoded variables 
+
 # # adding route to the madlib form page for user input
 # @app.route('/madlibform')
 # def madlib_form_page():
+# """Route to form page for user input"""
+
 #     return render_template('madlibform.html')
 
 # # making an output page for when the form from madlibform sends a request to here.
 # @app.route('/story')
 # def madlib_story():
+# """Route to page showing the output story"""
 #     place = request.args['place']
 #     noun = request.args['noun']
 #     verb = request.args['verb']
@@ -46,26 +51,35 @@ def home_page():
 #     pural_noun = request.args['pural_noun']
 #     return render_template('story.html', place=place, noun=noun, verb=verb, adjective=adjective, pural_noun=pural_noun)
 
+# second attempt where using the provided stories.py file to generate the story from a variable on the file. 
+
+# adding route to the madlib form page for user input
 @app.route("/madlibform")
-def ask_questions():
-    """Generate and show form to ask words."""
-
+# creating a function called madlib_form_page
+def madlib_form_page():
+    """Route to form page for user input"""
+    # settting variable prompts = to the attribute story.prompts
+    # this is saying story is equal to the class Story which if ran through the init has words = to the list in the 
+    # variable story so prompts will be noun, verb, place, etc.
+    # this is to set up the form page so you can call on the prompts from the stories.py file
     prompts = story.prompts
-
+    # rendering the form template with the ability to call on the prompts variable 
     return render_template(("madlibform.html"), prompts=prompts)
 
+# creating a route for the story page that displays the users input with the formated story
 @app.route("/story")
-def mablib_story():
-    """Show story result."""
+def madlib_story():
+    """Route to page showing the output story"""
 
     # testing the to make sure that output is appearing on /story
     # story_one = 'test'
 
-    # hardcode test of the class Story 
+    # hardcode test of the class Story
+    # creating a variable to store the variable s when you input the variable ans into the function generate under the Story class. 
     story_two = s.generate(ans)
 
     # using the input from form to generate story
+    # instead of hardcoding ans, now using the query string as inputs for the story page.
     story_three = story.generate(request.args)
-  
 
     return render_template(("story.html"), story_two=story_two, story_three=story_three)

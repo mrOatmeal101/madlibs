@@ -37,7 +37,8 @@ class Story:
         text = self.template
         # for loop with with vars key & val which are in answers.items(): 
         # setting key equal to place and val to the user input from the form
-        # 
+        # answers needs to be stored in a dictionary as it needs to be able to access key value pairs.
+        # test answers with variable ans
         for (key, val) in answers.items():
             # updating the text variable every time the loop is ran
             # replacing the key inside of text with the user input stored in val.
@@ -55,5 +56,6 @@ story = Story(
        large {adjective} {noun}. It loved to {verb} {plural_noun}."""
 )
 
+# trying sample from top to see how it works
 s = Story(["noun", "verb"],"I love to {verb} a good {noun}.")
 ans = {"verb": "eat", "noun": "mango"}

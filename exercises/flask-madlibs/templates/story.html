@@ -12,14 +12,11 @@
     {% block content %}
     <h1>Madlib Story Time!</h1>
 
-    <!-- {% for item in story_two %}
-    <p>{{ text }}</p>            
-    {% endfor %} -->
-
+    <!-- first attempt where the story is hardcoded into the html file -->
     <!-- <p>Once upon a time in a long-ago {{place}}, there lived a
-       large {{adjective}} {{noun}}. It loved to {{verb}} {{pural_noun}}.</p>
+       large {{adjective}} {{noun}}. It loved to {{verb}} {{pural_noun}}.</p> -->
 
-    <h1>Your Story</h1> -->
+    <!-- second attmept where  using the variable from stories to generate the story -->
     <p>{{ story_one }} {{ story_two }} {{ story_three }}</p>
 
     {% endblock %}

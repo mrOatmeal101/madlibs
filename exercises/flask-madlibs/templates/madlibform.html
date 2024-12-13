@@ -13,10 +13,10 @@
 
     {% block content %}
     <h1>Madlibs Form Page</h1>
-    <!-- Made a form for this page with the action set to madlibstory which will be the output page -->
+    <!-- Made a form for this page with the action set to the route /story which will be the output page -->
     <form action="/story">
 
-        <!-- first attempt -->
+        <!-- first attempt where the input boxes are hardcoded -->
         <!-- <p>
         <ul>
         <li>Place:<input type="text" placeholder="name of a place" name="place"></li>
@@ -28,14 +28,14 @@
         <button>Submit</button>
         </p> -->
 
-        <!-- second attempt -->
+        <!-- second attempt using a loop to loop over promts and create the input text and boxes -->
         {% for prompt in prompts  %}
         <ul>
-            <li>{{ prompt }}: <input type="text" placeholder="{{prompt}}" name="{{prompt}}"></li>
+            <li>{{ prompt }}: <input type="text" placeholder="{{ prompt }}" name="{{ prompt }}"></li>
         </ul>
         {% endfor %}
         <button>Submit</button>
-        
+
     </form>
     {% endblock %}
 
