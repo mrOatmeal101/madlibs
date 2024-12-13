@@ -26,40 +26,38 @@ debug = DebugToolbarExtension(app)
 # after testing server, set up templates folder and begin adding html pages.
 # Started with hello.html for the the first route to the home page.\
 # also imported the render_template from flask
-# @app.route('/')
-# def home_page():
-#     # used the function render template and give it the name of html file to render. 
-#     return render_template('hello.html')
+@app.route('/')
+def home_page():
+    # used the function render template and give it the name of html file to render. 
+    return render_template('hello.html')
 
-# # adding route to the madlib form page for user input
-# @app.route('/madlibform')
-# def madlib_form_page():
-#     return render_template('madlibform.html')
-# # 
+# adding route to the madlib form page for user input
+@app.route('/madlibform')
+def madlib_form_page():
+    return render_template('madlibform.html')
 
 # # making an output page for when the form from madlibform sends a request to here.
-# @app.route('/story')
-# def madlib_story():
-#     place = request.args['place']
-#     noun = request.args['noun']
-#     verb = request.args['verb']
-#     adjective = request.args['adjective']
-#     pural_noun = request.args['pural_noun']
-#     return render_template('story.html', place=place, noun=noun, verb=verb, adjective=adjective, pural_noun=pural_noun)
+@app.route('/story')
+def madlib_story():
+    place = request.args['place']
+    noun = request.args['noun']
+    verb = request.args['verb']
+    adjective = request.args['adjective']
+    pural_noun = request.args['pural_noun']
+    return render_template('story.html', place=place, noun=noun, verb=verb, adjective=adjective, pural_noun=pural_noun)
 
-@app.route("/")
-def ask_questions():
-    """Generate and show form to ask words."""
+# @app.route("/")
+# def ask_questions():
+#     """Generate and show form to ask words."""
 
-    prompts = story.prompts
+#     prompts = story.prompts
 
-    return render_template("hello.html", prompts=prompts)
+#     return render_template("hello.html"), prompts=prompts)
 
+# @app.route("/story")
+# def show_story():
+#     """Show story result."""
 
-@app.route("/story")
-def show_story():
-    """Show story result."""
+#     text = story.generate(request.args)
 
-    text = story.generate(request.args)
-
-    return render_template("story.html", text=text)
+#     return render_template("story.html"), text=text)

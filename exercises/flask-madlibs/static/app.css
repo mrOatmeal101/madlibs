@@ -1,0 +1,57 @@
+/* a {
+    color: hotpink;
+} */
+
+h1 {
+    text-align: left;
+    color: orangered;
+}
+
+h2 {
+    color: orangered;
+}
+
+p {
+    color: orangered;
+}
+
+footer {
+    color: hotpink;
+}
+
+body {
+    background-color: rgb(7, 2, 75);
+    padding: 0;
+    margin: 20px;
+}
+
+li {
+    color: orangered;
+}
+
+li input {
+    align-items: center;
+    background-color: aqua ;
+    te
+}
+
+.navbar {
+    background-color: black;
+    overflow: hidden;
+}
+
+.navbar a {
+    float: left;
+    color:  hotpink;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+    background-color: black;
+
+}
+
+.navbar a:hover {
+    background-color: white;
+    color: hotpink;
+}

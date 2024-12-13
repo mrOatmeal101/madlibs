@@ -1,18 +1,28 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Madlib Story Page</title>
 </head>
-<body>
+<body> -->
+    {% extends 'base.html' %}
+    {% block title %}Mablibs Story Page{% endblock %}
+
+    {% block content %}
     <h1>Madlib Story Time!</h1>
 
-    <!-- <p>Once upon a time in a long-ago {{place}}, there lived a
-       large {{adjective}} {{noun}}. It loved to {{verb}} {{pural_noun}}.</p> -->
+    <!-- {% for item in items %}
+            
+    {% endfor %} -->
 
-    <h1>Your Story</h1>
-    <p>{{ text }}</p>
+    <p>Once upon a time in a long-ago {{place}}, there lived a
+       large {{adjective}} {{noun}}. It loved to {{verb}} {{pural_noun}}.</p>
+
+    <!-- <h1>Your Story</h1>
+    <p>{{ text }}</p> -->
+
+    {% endblock %}
     
-</body>
-</html>
+<!-- </body>
+</html> -->

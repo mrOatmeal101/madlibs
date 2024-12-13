@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/app.css">
+    <title>{% block title %}{% endblock %}</title>
+</head>
+
+<body>
+
+    <nav class="navbar">
+    <a href="http://127.0.0.1:5000/">{% block home_page %}Home Page{% endblock %}</a>
+    <a href="http://127.0.0.1:5000/madlibform">{% block Madlib_form %}Madlib Form Page{% endblock %}</a>
+    <a href="http://127.0.0.1:5000/story">{% block Madlib_story %}Mablib Story Page{% endblock %}</a>
+    </nav>
+
+    {% block content %} {% endblock %} 
+
+    <footer>
+    Footer
+    </footer>
+
+    <script src="/static/app.js"></script>
+
+</body>
+
+</html>
